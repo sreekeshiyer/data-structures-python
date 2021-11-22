@@ -98,31 +98,22 @@ class LinkedList:
         """
         Reversing the linked list.
         """
-        array = []
 
-        currNode = self.head
-
-        while currNode != None:
-            array.append(currNode['value'])
-            currNode = currNode['next']
-
-        array.reverse()
-
-        self.head = {
-            'value': array[0],
-            'next': None,
-        }
-
-        self.tail = self.head
-        self.length = 1
-
-        if len(array) == 1:
+        if not self.head['next']:
             return
 
-        for value in array[1:]:
-            self.append(value)
+        first = self.head
+        self.tail = self.head
+        second = self.head['next']
 
-        return self
+        while second:
+            temp = second['next']
+            second['next'] = first
+            first = second
+            second = temp
+
+        self.head['next'] = None
+        self.head = first
 
     def printLinkedList(self):
         """
@@ -159,12 +150,12 @@ class LinkedList:
 
 
 ll = LinkedList(10)
-# ll.append(5)
-# ll.append(3)
-# ll.append(9)
-# ll.append(15)
-# ll.insertAtPos(22, 4)
-# ll.removeFromPos(0)
+ll.append(5)
+ll.append(3)
+ll.append(9)
+ll.append(15)
+ll.insertAtPos(22, 4)
+ll.removeFromPos(0)
 
 ll.printLinkedList()
 print('Length:', ll.length)
