@@ -115,6 +115,8 @@ class LinkedList:
         self.head['next'] = None
         self.head = first
 
+        self.printLinkedList()
+
     def printLinkedList(self):
         """
         Printing the Linked List
@@ -159,6 +161,5 @@ ll.removeFromPos(0)
 
 ll.printLinkedList()
 print('Length:', ll.length)
-ll.reverse()
 print('Reverse:', end=' ')
-ll.printLinkedList()
+ll.reverse()
