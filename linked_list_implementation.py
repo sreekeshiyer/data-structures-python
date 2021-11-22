@@ -116,6 +116,9 @@ class LinkedList:
         self.tail = self.head
         self.length = 1
 
+        if len(array) == 1:
+            return
+
         for value in array[1:]:
             self.append(value)
 
@@ -156,12 +159,12 @@ class LinkedList:
 
 
 ll = LinkedList(10)
-ll.append(5)
-ll.append(3)
-ll.append(9)
-ll.append(15)
-ll.insertAtPos(22, 4)
-ll.removeFromPos(0)
+# ll.append(5)
+# ll.append(3)
+# ll.append(9)
+# ll.append(15)
+# ll.insertAtPos(22, 4)
+# ll.removeFromPos(0)
 
 ll.printLinkedList()
 print('Length:', ll.length)
