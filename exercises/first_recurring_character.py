@@ -19,7 +19,7 @@ def find_recurring_character() -> int:
 def find_recurring_character2() -> int:
     '''
     Finding the first Recurring Character in a list using HASH MAPS. 
-    Complexity O(n)
+    Complexity *O(n)*
     '''
 
     myHashTable = {}
